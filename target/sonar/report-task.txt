@@ -1,6 +1,6 @@
-projectKey=chris
+projectKey=Shani
 serverUrl=http://35.239.201.125/sonarqube
 serverVersion=8.3.1.34397
-dashboardUrl=http://35.239.201.125/sonarqube/dashboard?id=chris
-ceTaskId=AXKDjQYSNKA07GsUeOtF
-ceTaskUrl=http://35.239.201.125/sonarqube/api/ce/task?id=AXKDjQYSNKA07GsUeOtF
+dashboardUrl=http://35.239.201.125/sonarqube/dashboard?id=Shani
+ceTaskId=AXKDnFdgNKA07GsUeOtq
+ceTaskUrl=http://35.239.201.125/sonarqube/api/ce/task?id=AXKDnFdgNKA07GsUeOtq
