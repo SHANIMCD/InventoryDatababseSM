@@ -1,0 +1,16 @@
+2020-06-05 10:40:22 ERROR JDBC:68 - Data truncation: Out of range value for column 'price' at row 1
+2020-06-05 10:43:11 ERROR JDBC:68 - Data truncation: Out of range value for column 'price' at row 1
+2020-06-05 10:45:14 ERROR JDBC:68 - Data truncation: Out of range value for column 'price' at row 1
+2020-06-05 10:50:13 ERROR JDBC:68 - Data truncation: Out of range value for column 'price' at row 1
+2020-06-05 10:51:05 ERROR JDBC:68 - Data truncation: Out of range value for column 'price' at row 1
+2020-06-05 11:03:31 ERROR JDBC:68 - Data truncation: Out of range value for column 'price' at row 1
+2020-06-05 14:41:16 ERROR JDBC:68 - Unknown column 'cust_id_fdk' in 'field list'
+2020-06-05 14:44:34 ERROR JDBC:68 - Unknown column 'item_fk' in 'field list'
+2020-06-06 14:52:26 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from orders where order_id = 3' at line 1
+2020-06-06 15:38:10 ERROR JDBC:68 - Unknown column 'id' in 'where clause'
+2020-06-06 15:41:11 ERROR JDBC:68 - Unknown column 'id' in 'where clause'
+2020-06-07 14:57:21 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'chicken', 8.0', chicken', WHERE item_id = 9'' at line 1
+2020-06-07 15:02:38 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'chicken', '8.0', 'chicken', WHERE item_id = 9'' at line 1
+2020-06-07 15:04:28 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''fried chicken', 8.0, 'chicken', WHERE item_id = 9' at line 1
+2020-06-07 15:05:45 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''fried chicken', 8.0, 'chicken' WHERE item_id = 9' at line 1
+2020-06-07 16:47:54 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order_id = 1' at line 1

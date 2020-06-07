@@ -4,6 +4,6 @@ public enum ChooseTable {
 	
 	ITEM,
 	ORDER,
-	CUSTOMER,
+	CUSTOMER;
 
 }

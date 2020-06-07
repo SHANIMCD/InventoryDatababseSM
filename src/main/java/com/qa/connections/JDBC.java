@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 import com.qa.exceptions.ConnectionNotMadeException;
 import com.qa.exceptions.SqlStatementNotUnderstoodException;
 import com.qa.interfaces.Closable;
@@ -13,6 +15,8 @@ import com.qa.interfaces.Queryable;
 
 
 public abstract class JDBC implements Openable, Closable, Queryable {
+	
+	public static final Logger LOGGER = Logger.getLogger(JDBC.class);
 	
 	private String user;
 	private String password;
@@ -61,7 +65,7 @@ public abstract class JDBC implements Openable, Closable, Queryable {
 			statement.close();
 			
 		} catch (SQLException e) {
-			
+			LOGGER.error(e.getMessage());
 			throw new SqlStatementNotUnderstoodException("could not execute: " + sql);
 		}
 		
