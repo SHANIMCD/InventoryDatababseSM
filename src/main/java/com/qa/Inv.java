@@ -7,9 +7,11 @@ import com.qa.connections.RemoteJDBC;
 import com.qa.dao.CustomerDataAccessObject;
 import com.qa.dao.ItemAccessObject;
 import com.qa.dao.OrderDataAccessObject;
+import com.qa.dao.OrderlineDataAccessObject;
 import com.qa.schemas.Customer;
 import com.qa.schemas.Item;
 import com.qa.schemas.Order;
+import com.qa.schemas.Orderline;
 
 
 public class Inv {
@@ -123,6 +125,24 @@ public class Inv {
 				System.out.println(customer.getFirst_name() + ", has been added to the database ");
 
 				break;
+				
+			case ORDERLINE:
+				Input input3 = new Input();
+				System.out.println("Orderline create: ");
+				System.out.println("Enter order ID: ");
+				int order_id_fk = input3.getIntInput();
+				System.out.println("Enter Item ID: ");
+				int _item_id_fk = input3.getIntInput();
+				System.out.println("Enter Item quantity: ");
+				int QTY = input3.getIntInput();
+				
+				Orderline orderline = new Orderline(0, order_id_fk, _item_id_fk, QTY);
+				OrderlineDataAccessObject orderlineDao = new OrderlineDataAccessObject(connection);
+				orderlineDao.insertIntoORderline(orderline);
+				
+				System.out.println("Order successfully added");
+				
+				break;
 
 			case ORDER:
 				Input input2 = new Input();
@@ -137,13 +157,15 @@ public class Inv {
 				OrderDataAccessObject orderDao = new OrderDataAccessObject(connection);
 
 				orderDao.insertAnOrder(order);
-				System.out.println("Order successfully added");
+				System.out.println(" Successfully added into orderline");
 
 				break;
 			default:
-				break;
+				connection.closeConnection();
 
 			}
+			
+			break;
 
 		case READ:
 			System.out.println("Entering READ menu: ");
@@ -194,6 +216,10 @@ public class Inv {
 				System.out.println("Entering Order Read: ");
 
 				break;
+				
+			case ORDERLINE:
+				System.out.println("Entering Orderline Read: ");
+				
 			default:
 				break;
 			}
@@ -280,6 +306,30 @@ public class Inv {
 				
 				
 				break;
+				
+			case ORDERLINE:
+				System.out.println("Entering Orderline update: ");
+				Input input3 = new Input();
+				System.out.println("*********************");
+				System.out.println("Please enter/update the following: ");
+				System.out.println("Order ID: ");
+				int order_id_fk = input3.getIntInput();
+				System.out.println("Item ID: ");
+				int _item_id_fk = input3.getIntInput();
+				System.out.println("Enter quantity:");
+				int QTY = input3.getIntInput();
+				System.out.println("Please enter the record ID which you'd like to update: ");
+				int ol_id = input3.getIntInput();
+				
+				Orderline orderline = new Orderline(ol_id, order_id_fk, _item_id_fk, QTY);
+				
+				OrderlineDataAccessObject orderlineDao = new OrderlineDataAccessObject(connection);
+				orderlineDao.updateInOrderline(orderline);
+				System.out.println("Orderline successfully updated!");
+				
+				
+				break;
+				
 
 			case ORDER:
 				System.out.println("Entering Order update: ");

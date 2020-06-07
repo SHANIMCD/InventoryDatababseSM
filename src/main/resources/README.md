@@ -40,6 +40,8 @@ I used the public IP address from my GCP SQL instance to connect when prompted d
 
 ![](2020-05-24-17-10-18.png)
 
+![](2020-06-07-19-00-34.png)
+
 ## One to many:
 Customer to order schemas
 - A customer can have many orders but an order can only be unique to the customer that placed it.
@@ -68,6 +70,9 @@ I created the following variables:
 - DB_URL
 - USER
 - For the sake of development I hard coded my username and password although this wouldn't be best practice for a deployed application.
+
+
+## Creating the tables in Java
 
 
 
