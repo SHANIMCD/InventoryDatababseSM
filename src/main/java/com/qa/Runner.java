@@ -8,6 +8,10 @@ import org.apache.log4j.Logger;
 
 import com.qa.connections.RemoteJDBC;
 
+import com.qa.Input;
+
+
+
 public class Runner {
 	public static final Logger LOGGER = Logger.getLogger(Runner.class);
 	public static void main(String[] args) {

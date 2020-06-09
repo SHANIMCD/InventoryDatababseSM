@@ -46,7 +46,7 @@ public class Inv {
 			}
 
 			catch (IllegalArgumentException e) {
-				System.out.println("selection not valid, please re-enter: ");
+				LOGGER.warn("selection not valid, please re-enter: ");
 			}
 		}
 		
@@ -58,7 +58,7 @@ public class Inv {
 		switch (selectedChoice) {
 		
 		case EXIT: 
-			System.out.println("Exiting Application, Goodbye!");
+			LOGGER.info("Exiting Application, Goodbye!");
 			System.exit(0);
 			break;
 			
@@ -78,7 +78,7 @@ public class Inv {
 					selectTable = ChooseTable.valueOf(chooseTableSelect.toUpperCase());
 					break;
 				} catch (IllegalArgumentException e) {
-					System.out.println("selection not valid, please re-enter: ");
+					LOGGER.warn("selection not valid, please re-enter: ");
 
 				}
 			}
@@ -109,7 +109,7 @@ public class Inv {
 				Item item = new Item(1, item_name, price, category);
 				ItemAccessObject itemDao = new ItemAccessObject(connection);
 				itemDao.insertAnItem(item);
-				System.out.println(item_name + " successfully added!");
+				LOGGER.info(item_name + " successfully added!");
 
 				System.out.println("------");
 
@@ -138,7 +138,7 @@ public class Inv {
 
 				CustomerDataAccessObject customerDao = new CustomerDataAccessObject(connection);
 				customerDao.insertCustomer(customer);
-				System.out.println(customer.getFirst_name() + ", has been added to the database ");
+				LOGGER.info(customer.getFirst_name() + ", has been added to the database ");
 
 				break;
 
@@ -156,7 +156,7 @@ public class Inv {
 				OrderlineDataAccessObject orderlineDao = new OrderlineDataAccessObject(connection);
 				orderlineDao.insertIntoORderline(orderline);
 
-				System.out.println("Order successfully added");
+				LOGGER.info("Order successfully added");
 
 				break;
 
@@ -173,7 +173,7 @@ public class Inv {
 				OrderDataAccessObject orderDao = new OrderDataAccessObject(connection);
 
 				orderDao.insertAnOrder(order);
-				System.out.println(" Successfully added into orderline");
+				LOGGER.info(" Successfully added into orderline");
 
 				break;
 			default:
@@ -200,7 +200,7 @@ public class Inv {
 					chooseTableRead = ChooseTable.valueOf(selectedToRead.toUpperCase());
 					break;
 				} catch (IllegalArgumentException e) {
-					System.out.println("selection not valid, please re-enter: ");
+					LOGGER.warn("selection not valid, please re-enter: ");
 
 				}
 			}
@@ -244,7 +244,7 @@ public class Inv {
 			break;
 
 		case UPDATE:
-			System.out.println("Entering UPDATE menu: ");
+			System.out.println("UPDATE menu: ");
 			System.out.println("Please select one of the following: ");
 
 			for (ChooseTable chooseTableUpdate : ChooseTable.values()) {
@@ -260,7 +260,7 @@ public class Inv {
 					chooseTableUpdate = ChooseTable.valueOf(selectedToUpdate.toUpperCase());
 					break;
 				} catch (IllegalArgumentException e) {
-					System.out.println("selection not valid, please re-enter: ");
+					LOGGER.warn("selection not valid, please re-enter: ");
 
 				}
 			}
@@ -295,7 +295,7 @@ public class Inv {
 				ItemAccessObject itemDao = new ItemAccessObject(connection);
 				itemDao.updateAnItem(item);
 
-				System.out.println(item.getItem_name() + " now updated!");
+				LOGGER.info(item.getItem_name() + " now updated!");
 
 				break;
 
@@ -327,7 +327,7 @@ public class Inv {
 
 				CustomerDataAccessObject customerDao = new CustomerDataAccessObject(connection);
 				customerDao.updateACustomer(customer);
-				System.out.println(customer.getFirst_name() + ", has been updated! ");
+				LOGGER.info(customer.getFirst_name() + ", has been updated! ");
 
 				break;
 
@@ -349,7 +349,7 @@ public class Inv {
 
 				OrderlineDataAccessObject orderlineDao = new OrderlineDataAccessObject(connection);
 				orderlineDao.updateInOrderline(orderline);
-				System.out.println("Orderline successfully updated!");
+				LOGGER.info("Orderline successfully updated!");
 
 				break;
 
@@ -373,7 +373,7 @@ public class Inv {
 				OrderDataAccessObject orderDao = new OrderDataAccessObject(connection);
 
 				orderDao.updateAnOrder(order);
-				System.out.println("Order successfully updated!");
+				LOGGER.info("Order successfully updated!");
 
 				break;
 			default:
@@ -398,7 +398,7 @@ public class Inv {
 					chooseTableDelete = ChooseTable.valueOf(selectedToDelete.toUpperCase());
 					break;
 				} catch (IllegalArgumentException e) {
-					System.out.println("selection not valid, please re-enter: ");
+					LOGGER.warn("selection not valid, please re-enter: ");
 
 				}
 			}
@@ -419,7 +419,7 @@ public class Inv {
 				ItemAccessObject itemDao = new ItemAccessObject(connection);
 				itemDao.deleteAnItem(item);
 
-				System.out.println("Item deleted successfully! ");
+				LOGGER.info("Item deleted successfully! ");
 				break;
 
 			case CUSTOMER:
@@ -430,7 +430,7 @@ public class Inv {
 				CustomerDataAccessObject customerDao = new CustomerDataAccessObject(connection);
 				customerDao.deleteACustomer(cust);
 
-				System.out.println("Customer deleted successfully! ");
+				LOGGER.info("Customer deleted successfully! ");
 
 				break;
 
@@ -444,7 +444,7 @@ public class Inv {
 
 				orderDao.deleteAnOrder(order);
 
-				System.out.println("order deleted successfully! ");
+				LOGGER.info("order deleted successfully! ");
 				break;
 
 			default:
