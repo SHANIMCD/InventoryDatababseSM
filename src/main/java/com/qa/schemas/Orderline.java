@@ -47,6 +47,12 @@ public class Orderline {
 		QTY = qTY;
 	}
 
+	@Override
+	public String toString() {
+		return "Orderline [ol_id=" + ol_id + ", order_id_fk=" + order_id_fk + ", item_id_fk=" + item_id_fk + ", QTY="
+				+ QTY + "]";
+	}
+
 	
 
 }

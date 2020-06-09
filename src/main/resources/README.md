@@ -40,7 +40,7 @@ I used the public IP address from my GCP SQL instance to connect when prompted d
 
 ![](2020-05-24-17-10-18.png)
 
-![](2020-06-07-19-00-34.png)
+
 
 ## One to many:
 Customer to order schemas

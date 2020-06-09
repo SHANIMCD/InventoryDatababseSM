@@ -1,9 +1,10 @@
 package com.qa;
 
 import org.apache.log4j.Logger;
+
 import com.qa.connections.Action;
 import com.qa.connections.ChooseTable;
-import com.qa.connections.RemoteJDBC;
+import com.qa.connections.JDBC;
 import com.qa.dao.CustomerDataAccessObject;
 import com.qa.dao.ItemAccessObject;
 import com.qa.dao.OrderDataAccessObject;
@@ -12,22 +13,23 @@ import com.qa.schemas.Customer;
 import com.qa.schemas.Item;
 import com.qa.schemas.Order;
 import com.qa.schemas.Orderline;
-
+import com.qa.services.CustomerService;
+import com.qa.services.ItemService;
+import com.qa.services.OrderLineService;
+import com.qa.services.OrderService;
 
 public class Inv {
 
 	public static final Logger LOGGER = Logger.getLogger(Inv.class);
 
 	Input input = new Input();
+	private JDBC connection;
+
+	public Inv(JDBC jdbc) {
+		this.connection = jdbc;
+	}
 
 	public void start() {
-
-		System.out.println("Database username: ");
-		String user = input.getInput();
-		System.out.println("Database password: ");
-		String password = input.getInput();
-
-		RemoteJDBC connection = new RemoteJDBC(user, password);
 
 		// ---- Actions for selecting INSERT, READ, UPDATE, DELETE ---- //
 		for (Action action : Action.values()) {
@@ -47,11 +49,19 @@ public class Inv {
 				System.out.println("selection not valid, please re-enter: ");
 			}
 		}
+		
 
 		// --- End of Actions for selecting INSERT, READ, UPDATE, DELETE --- //
 
 		// ---- Menu Begins ---- //
+
 		switch (selectedChoice) {
+		
+		case EXIT: 
+			System.out.println("Exiting Application, Goodbye!");
+			System.exit(0);
+			break;
+			
 		case INSERT:
 			System.out.println("Entering insert menu: ");
 			System.out.println("Please select one of the following: ");
@@ -74,6 +84,12 @@ public class Inv {
 			}
 
 			switch (selectTable) {
+
+			case BACK:
+
+				start();
+
+				break;
 
 			case ITEM:
 				System.out.println("--------------------");
@@ -125,7 +141,7 @@ public class Inv {
 				System.out.println(customer.getFirst_name() + ", has been added to the database ");
 
 				break;
-				
+
 			case ORDERLINE:
 				Input input3 = new Input();
 				System.out.println("Orderline create: ");
@@ -135,13 +151,13 @@ public class Inv {
 				int _item_id_fk = input3.getIntInput();
 				System.out.println("Enter Item quantity: ");
 				int QTY = input3.getIntInput();
-				
+
 				Orderline orderline = new Orderline(0, order_id_fk, _item_id_fk, QTY);
 				OrderlineDataAccessObject orderlineDao = new OrderlineDataAccessObject(connection);
 				orderlineDao.insertIntoORderline(orderline);
-				
+
 				System.out.println("Order successfully added");
-				
+
 				break;
 
 			case ORDER:
@@ -164,7 +180,7 @@ public class Inv {
 				connection.closeConnection();
 
 			}
-			
+
 			break;
 
 		case READ:
@@ -191,38 +207,41 @@ public class Inv {
 
 			switch (chooseTableRead) {
 
+			case BACK:
+
+				start();
+
+				break;
+
 			case ITEM:
-				System.out.println("Entering Read item: ");
-				
-				int item_id;
-				String item_name;
-				double price;
-				String category;
-				
-				
-//				Item item = new Item(item_id, item_name, price, category);
-				ItemAccessObject itemDao = new ItemAccessObject(connection);
-				
-//				itemDao.selectAllItems(item);
+
+				ItemService itemService = new ItemService(new ItemAccessObject(connection));
+				itemService.displayItems();
 
 				break;
 
 			case CUSTOMER:
-				System.out.println("Entering Customer Read: ");
+				CustomerService customerService = new CustomerService(new CustomerDataAccessObject(connection));
+				customerService.displayCustomers();
 
 				break;
 
 			case ORDER:
-				System.out.println("Entering Order Read: ");
+				OrderService orderService = new OrderService(new OrderDataAccessObject(connection));
+				orderService.displayOrders();
 
 				break;
-				
+
 			case ORDERLINE:
-				System.out.println("Entering Orderline Read: ");
-				
+				OrderLineService orderLineService = new OrderLineService(new OrderlineDataAccessObject(connection));
+				orderLineService.displayTheOrderLine();
+
 			default:
 				break;
 			}
+
+			connection.closeConnection();
+			break;
 
 		case UPDATE:
 			System.out.println("Entering UPDATE menu: ");
@@ -248,10 +267,16 @@ public class Inv {
 
 			switch (chooseTableUpdate) {
 
+			case BACK:
+
+				start();
+
+				break;
+
 			case ITEM:
 				System.out.println("Entering Item update: ");
 				Input input = new Input();
-				
+
 				System.out.println("*********************");
 
 				System.out.println("Please enter/update the item name: ");
@@ -262,14 +287,14 @@ public class Inv {
 
 				System.out.println("Please enter/update the category: ");
 				String category = input.getInput();
-				
+
 				System.out.println("Please enter the record ID which you'd like to update");
 				int item_id = input.getIntInput();
-				
+
 				Item item = new Item(item_id, item_name, price, category);
 				ItemAccessObject itemDao = new ItemAccessObject(connection);
 				itemDao.updateAnItem(item);
-				
+
 				System.out.println(item.getItem_name() + " now updated!");
 
 				break;
@@ -294,7 +319,7 @@ public class Inv {
 
 				System.out.println("customer password:");
 				String _password = input1.getInput();
-				
+
 				System.out.println("Please enter the record ID which you'd like to update: ");
 				int customer_id = input1.getIntInput();
 
@@ -303,10 +328,9 @@ public class Inv {
 				CustomerDataAccessObject customerDao = new CustomerDataAccessObject(connection);
 				customerDao.updateACustomer(customer);
 				System.out.println(customer.getFirst_name() + ", has been updated! ");
-				
-				
+
 				break;
-				
+
 			case ORDERLINE:
 				System.out.println("Entering Orderline update: ");
 				Input input3 = new Input();
@@ -320,16 +344,14 @@ public class Inv {
 				int QTY = input3.getIntInput();
 				System.out.println("Please enter the record ID which you'd like to update: ");
 				int ol_id = input3.getIntInput();
-				
+
 				Orderline orderline = new Orderline(ol_id, order_id_fk, _item_id_fk, QTY);
-				
+
 				OrderlineDataAccessObject orderlineDao = new OrderlineDataAccessObject(connection);
 				orderlineDao.updateInOrderline(orderline);
 				System.out.println("Orderline successfully updated!");
-				
-				
+
 				break;
-				
 
 			case ORDER:
 				System.out.println("Entering Order update: ");
@@ -337,12 +359,12 @@ public class Inv {
 
 				System.out.println("*********************");
 				System.out.println("Please enter/update the following: ");
-				
+
 				System.out.println("Customer ID: ");
 				int cust_id_fk = input2.getIntInput();
 				System.out.println("Enter Item ID: ");
 				int item_id_fk = input2.getIntInput();
-				
+
 				System.out.println("Please enter the record ID which you'd like to update: ");
 				int order_id = input2.getIntInput();
 
@@ -352,8 +374,6 @@ public class Inv {
 
 				orderDao.updateAnOrder(order);
 				System.out.println("Order successfully updated!");
-
-				
 
 				break;
 			default:
@@ -384,6 +404,12 @@ public class Inv {
 			}
 
 			switch (chooseTableDelete) {
+
+			case BACK:
+
+				start();
+
+				break;
 
 			case ITEM:
 				Input input5 = new Input();

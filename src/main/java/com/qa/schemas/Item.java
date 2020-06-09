@@ -26,6 +26,15 @@ public class Item {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Item [item_id=" + item_id + ", item_name=" + item_name + ", price=" + price + ", category=" + category
+				+ "]";
+	}
+
+
+
+
 	public void setItem_id(int item_id) {
 		this.item_id = item_id;
 	}

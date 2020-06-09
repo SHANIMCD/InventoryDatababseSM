@@ -18,6 +18,15 @@ public class Order {
 		this.setDefault_timestamp(default_timestamp);
 	}
 
+	
+
+	@Override
+	public String toString() {
+		return "Order [order_id=" + order_id + ", cust_id_fk=" + cust_id_fk + ", item_id_fk=" + item_id_fk
+				+ ", default_timestamp=" + default_timestamp + "]";
+	}
+
+
 
 	public int getOrder_id() {
 		return order_id;

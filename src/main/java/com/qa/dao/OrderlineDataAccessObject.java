@@ -1,4 +1,9 @@
 package com.qa.dao;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.qa.connections.JDBC; 
 import com.qa.schemas.Orderline;
 
@@ -24,7 +29,22 @@ public class OrderlineDataAccessObject {
 		jdbc.sendUpdate(sql);
 	}
 	
-	
+	public List<Orderline> showTheOrderline() throws SQLException {
+		String sql = "select * from orderline;";
+		ResultSet resultSet = jdbc.sendQuery(sql);
+		List<Orderline> orderlines = new ArrayList<Orderline>();
+		while (resultSet.next()) {
+			
+			int ol_id = resultSet.getInt("ol_id");
+			int order_id_fk = resultSet.getInt("order_id_fk");
+			int item_id_fk = resultSet.getInt("item_id_fk");
+			int QTY = resultSet.getInt("QTY");
+			
+			Orderline orderline = new Orderline(ol_id, order_id_fk, item_id_fk, QTY);
+			orderlines.add(orderline);
+		}
+		return orderlines;
+	}
 	
 	
 	

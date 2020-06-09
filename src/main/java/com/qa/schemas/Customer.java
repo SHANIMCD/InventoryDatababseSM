@@ -19,10 +19,18 @@ public class Customer {
 		this.setPassword(password);
 	}
 	
+	
 	public int getCustomerId() {
 		return customer_id;
 	}
 	
+	@Override
+	public String toString() {
+		return "Customer [customer_id=" + customer_id + ", first_name=" + first_name + ", last_name=" + last_name
+				+ ", address=" + address + ", email=" + email + ", password=" + password + "]";
+	}
+
+
 	public int setCustomerId() {
 		return customer_id;
 	}

@@ -14,3 +14,155 @@
 2020-06-07 15:04:28 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''fried chicken', 8.0, 'chicken', WHERE item_id = 9' at line 1
 2020-06-07 15:05:45 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''fried chicken', 8.0, 'chicken' WHERE item_id = 9' at line 1
 2020-06-07 16:47:54 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order_id = 1' at line 1
+2020-06-07 20:24:30 ERROR JDBC:68 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', 3')' at line 1
+2020-06-07 20:59:50 ERROR JDBC:68 - Cannot add or update a child row: a foreign key constraint fails (`inventorydb`.`orderline`, CONSTRAINT `orderline_ibfk_2` FOREIGN KEY (`item_id_fk`) REFERENCES `items` (`item_id`))
+2020-06-09 11:49:30 ERROR ItemService:31 - unable to read items
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.checkClosed(ResultSetImpl.java:437)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.next(ResultSetImpl.java:1712)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.qa.dao.ItemAccessObject.selectAllItems(ItemAccessObject.java:41)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.qa.services.ItemService.displayItems(ItemService.java:25)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.qa.Inv.start(Inv.java:197)
+2020-06-09 11:49:30 DEBUG ItemService:33 - com.qa.Runner.main(Runner.java:18)
+2020-06-09 11:50:56 ERROR ItemService:31 - unable to read items
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.qa.dao.ItemAccessObject.selectAllItems(ItemAccessObject.java:52)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.qa.services.ItemService.displayItems(ItemService.java:25)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.qa.Inv.start(Inv.java:197)
+2020-06-09 11:50:56 DEBUG ItemService:33 - com.qa.Runner.main(Runner.java:18)
+2020-06-09 11:52:05 ERROR ItemService:31 - unable to read items
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.qa.dao.ItemAccessObject.selectAllItems(ItemAccessObject.java:52)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.qa.services.ItemService.displayItems(ItemService.java:25)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.qa.Inv.start(Inv.java:197)
+2020-06-09 11:52:05 DEBUG ItemService:33 - com.qa.Runner.main(Runner.java:18)
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=1, item_name=prawn crackers, price=0.99, category=appetizer]
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=2, item_name=hot and sour soup, price=3.99, category=appetizer]
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=3, item_name=salt and pepper spare ribs, price=5.99, category=appetizer]
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=5, item_name=chicken, price=9.0, category=main ]
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=6, item_name=chicken, price=9.0, category=main ]
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=7, item_name=chicken, price=9.0, category=main ]
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=8, item_name=grilled chicken, price=9.0, category=chicken]
+2020-06-09 11:55:40 INFO  ItemService:27 - Item [item_id=9, item_name=fried chicken, price=8.0, category=chicken]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=1, item_name=prawn crackers, price=0.99, category=appetizer]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=2, item_name=hot and sour soup, price=3.99, category=appetizer]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=3, item_name=salt and pepper spare ribs, price=5.99, category=appetizer]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=5, item_name=chicken, price=9.0, category=main ]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=6, item_name=chicken, price=9.0, category=main ]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=7, item_name=chicken, price=9.0, category=main ]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=8, item_name=grilled chicken, price=9.0, category=chicken]
+2020-06-09 12:49:23 INFO  ItemService:27 - Item [item_id=9, item_name=fried chicken, price=8.0, category=chicken]
+2020-06-09 12:52:22 ERROR ItemService:31 - unable to read items
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:807)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.qa.dao.ItemAccessObject.selectAllItems(ItemAccessObject.java:43)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.qa.services.ItemService.displayItems(ItemService.java:25)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.qa.Inv.start(Inv.java:197)
+2020-06-09 12:52:22 DEBUG ItemService:33 - com.qa.Runner.main(Runner.java:18)
+2020-06-09 12:53:54 ERROR ItemService:31 - unable to read items
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:807)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.qa.dao.ItemAccessObject.selectAllItems(ItemAccessObject.java:43)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.qa.services.ItemService.displayItems(ItemService.java:25)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.qa.Inv.start(Inv.java:197)
+2020-06-09 12:53:54 DEBUG ItemService:33 - com.qa.Runner.main(Runner.java:18)
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=1, item_name=prawn crackers, price=0.99, category=appetizer]
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=2, item_name=hot and sour soup, price=3.99, category=appetizer]
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=3, item_name=salt and pepper spare ribs, price=5.99, category=appetizer]
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=5, item_name=chicken, price=9.0, category=main ]
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=6, item_name=chicken, price=9.0, category=main ]
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=7, item_name=chicken, price=9.0, category=main ]
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=8, item_name=grilled chicken, price=9.0, category=chicken]
+2020-06-09 12:54:51 INFO  ItemService:27 - Item [item_id=9, item_name=fried chicken, price=8.0, category=chicken]
+2020-06-09 13:22:28 INFO  CustomerService:24 - com.qa.schemas.Customer@551bdc27
+2020-06-09 13:22:28 INFO  CustomerService:24 - com.qa.schemas.Customer@70b0b186
+2020-06-09 13:22:28 INFO  CustomerService:24 - com.qa.schemas.Customer@ba8d91c
+2020-06-09 13:26:14 INFO  CustomerService:24 - Customer [customer_id=1, first_name=Jenny, last_name=Lopez, address=the block, email=jlo@email.com, password=blahblah]
+2020-06-09 13:26:14 INFO  CustomerService:24 - Customer [customer_id=2, first_name=Shani, last_name=McDonald, address=10 Downing Street, email=shaniagain@email, password=passpasspass]
+2020-06-09 13:26:14 INFO  CustomerService:24 - Customer [customer_id=3, first_name=Katie, last_name=Johnson, address=Chelsea, email=katie@email, password=pass]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=1, item_name=prawn crackers, price=0.99, category=appetizer]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=2, item_name=hot and sour soup, price=3.99, category=appetizer]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=3, item_name=salt and pepper spare ribs, price=5.99, category=appetizer]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=5, item_name=chicken, price=9.0, category=main ]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=6, item_name=chicken, price=9.0, category=main ]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=7, item_name=chicken, price=9.0, category=main ]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=8, item_name=grilled chicken, price=9.0, category=chicken]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=9, item_name=fried chicken, price=8.0, category=chicken]
+2020-06-09 13:33:24 INFO  ItemService:27 - Item [item_id=10, item_name=chips, price=7.0, category=sides]
+2020-06-09 14:06:53 ERROR ItemService:30 - unable to read items
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:948)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.qa.dao.OrderDataAccessObject.listAllOrders(OrderDataAccessObject.java:46)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.qa.services.OrderService.displayOrders(OrderService.java:23)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.qa.Inv.start(Inv.java:211)
+2020-06-09 14:06:53 DEBUG ItemService:32 - com.qa.Runner.main(Runner.java:18)
+2020-06-09 14:07:33 INFO  ItemService:25 - com.qa.schemas.Order@551bdc27
+2020-06-09 14:07:33 INFO  ItemService:25 - com.qa.schemas.Order@70b0b186
+2020-06-09 14:07:33 INFO  ItemService:25 - com.qa.schemas.Order@ba8d91c
+2020-06-09 14:08:03 INFO  ItemService:25 - Order [order_id=1, cust_id_fk=2, item_id_fk=2, default_timestamp=null]
+2020-06-09 14:08:03 INFO  ItemService:25 - Order [order_id=2, cust_id_fk=1, item_id_fk=1, default_timestamp=null]
+2020-06-09 14:08:03 INFO  ItemService:25 - Order [order_id=3, cust_id_fk=2, item_id_fk=2, default_timestamp=null]
+2020-06-09 14:44:06 INFO  ItemService:25 - com.qa.schemas.Orderline@551bdc27
+2020-06-09 14:44:06 INFO  ItemService:25 - com.qa.schemas.Orderline@70b0b186
+2020-06-09 14:44:06 INFO  ItemService:25 - com.qa.schemas.Orderline@ba8d91c
+2020-06-09 14:44:53 INFO  ItemService:25 - Orderline [ol_id=1, order_id_fk=2, item_id_fk=3, QTY=5]
+2020-06-09 14:44:53 INFO  ItemService:25 - Orderline [ol_id=3, order_id_fk=1, item_id_fk=2, QTY=3]
+2020-06-09 14:44:53 INFO  ItemService:25 - Orderline [ol_id=4, order_id_fk=1, item_id_fk=2, QTY=5]
+2020-06-09 14:46:48 INFO  ItemService:25 - Orderline [ol_id=1, order_id_fk=2, item_id_fk=3, QTY=5]
+2020-06-09 14:46:48 INFO  ItemService:25 - Orderline [ol_id=3, order_id_fk=1, item_id_fk=2, QTY=3]
+2020-06-09 14:46:48 INFO  ItemService:25 - Orderline [ol_id=4, order_id_fk=1, item_id_fk=2, QTY=5]
+2020-06-09 14:46:48 INFO  ItemService:25 - Orderline [ol_id=5, order_id_fk=3, item_id_fk=3, QTY=4]
+2020-06-09 15:03:16 INFO  CustomerService:24 - Customer [customer_id=1, first_name=Jenny, last_name=Lopez, address=the block, email=jlo@email.com, password=blahblah]
+2020-06-09 15:03:16 INFO  CustomerService:24 - Customer [customer_id=2, first_name=Shani, last_name=McDonald, address=10 Downing Street, email=shaniagain@email, password=passpasspass]
+2020-06-09 15:03:16 INFO  CustomerService:24 - Customer [customer_id=3, first_name=Katie, last_name=Johnson, address=Chelsea, email=katie@email, password=pass]
+2020-06-09 15:03:43 ERROR JDBC:67 - Cannot add or update a child row: a foreign key constraint fails (`inventorydb`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`cust_id_fk`) REFERENCES `customer` (`customer_id`))
+2020-06-09 16:36:02 ERROR Runner:27 - unable to connect
+2020-06-09 16:38:32 ERROR Runner:28 - unable to connect
+2020-06-09 16:39:49 ERROR Runner:28 - unable to connect
+2020-06-09 16:39:54 ERROR Runner:28 - unable to connect
+2020-06-09 16:39:58 ERROR Runner:28 - unable to connect
+2020-06-09 16:40:17 ERROR Runner:28 - unable to connect, please try again: 
+2020-06-09 16:45:21 INFO  CustomerService:24 - Customer [customer_id=1, first_name=Jenny, last_name=Lopez, address=the block, email=jlo@email.com, password=blahblah]
+2020-06-09 16:45:21 INFO  CustomerService:24 - Customer [customer_id=2, first_name=Shani, last_name=McDonald, address=10 Downing Street, email=shaniagain@email, password=passpasspass]
+2020-06-09 16:45:21 INFO  CustomerService:24 - Customer [customer_id=3, first_name=Katie, last_name=Johnson, address=Chelsea, email=katie@email, password=pass]
+2020-06-09 16:48:04 ERROR Runner:28 - unable to connect, please try again: 
+2020-06-09 17:07:59 ERROR Runner:28 - unable to connect, please try again: 
+2020-06-09 17:08:03 ERROR Runner:28 - unable to connect, please try again: 
+2020-06-09 17:08:18 INFO  ItemService:25 - Order [order_id=1, cust_id_fk=2, item_id_fk=2, default_timestamp=null]
+2020-06-09 17:08:18 INFO  ItemService:25 - Order [order_id=2, cust_id_fk=1, item_id_fk=1, default_timestamp=null]
+2020-06-09 17:08:18 INFO  ItemService:25 - Order [order_id=3, cust_id_fk=2, item_id_fk=2, default_timestamp=null]
+2020-06-09 17:09:25 INFO  CustomerService:24 - Customer [customer_id=1, first_name=Jenny, last_name=Lopez, address=the block, email=jlo@email.com, password=blahblah]
+2020-06-09 17:09:25 INFO  CustomerService:24 - Customer [customer_id=2, first_name=Shani, last_name=McDonald, address=10 Downing Street, email=shaniagain@email, password=passpasspass]
+2020-06-09 17:09:25 INFO  CustomerService:24 - Customer [customer_id=3, first_name=Katie, last_name=Johnson, address=Chelsea, email=katie@email, password=pass]
+2020-06-09 17:09:25 INFO  CustomerService:24 - Customer [customer_id=4, first_name=Mary, last_name=Mack, address=London, email=shani@email, password=pass]
+2020-06-09 17:14:05 ERROR Runner:28 - unable to connect, please try again: 
+2020-06-09 17:15:10 INFO  ItemService:25 - Order [order_id=1, cust_id_fk=2, item_id_fk=2, default_timestamp=null]
+2020-06-09 17:15:10 INFO  ItemService:25 - Order [order_id=2, cust_id_fk=1, item_id_fk=1, default_timestamp=null]
+2020-06-09 17:15:10 INFO  ItemService:25 - Order [order_id=3, cust_id_fk=2, item_id_fk=2, default_timestamp=null]

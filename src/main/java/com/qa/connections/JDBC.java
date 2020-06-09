@@ -49,7 +49,6 @@ public abstract class JDBC implements Openable, Closable, Queryable {
 		try {
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(sql);
-			statement.close();
 			return resultSet;
 		} catch (SQLException e) {
 			e.printStackTrace();

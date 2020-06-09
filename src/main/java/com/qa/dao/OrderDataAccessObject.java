@@ -1,5 +1,11 @@
 package com.qa.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.qa.connections.JDBC;
 import com.qa.schemas.Order;
 
@@ -28,9 +34,22 @@ public class OrderDataAccessObject {
 		jdbc.sendUpdate(sql);
 	}
 	
-	public void listAllOrders() {
+	public List<Order> listAllOrders() throws SQLException {
 		String sql = "SELECT * from orders;";
-		jdbc.sendQuery(sql);
+		ResultSet resultSet = jdbc.sendQuery(sql);
+		List<Order> orders = new ArrayList<Order>();
+		while(resultSet.next()) {
+			
+			int order_id = resultSet.getInt("order_id");
+			int cust_id_fk = resultSet.getInt("cust_id_fk");
+			int item_id_fk = resultSet.getInt("item_id_fk");
+			Timestamp default_timestamp = resultSet.getTimestamp("datetime_placed");
+			
+			Order order = new Order(order_id, cust_id_fk, item_id_fk, default_timestamp);
+			orders.add(order);
+			
+		}
+		return orders;
 	}
 	
 	
