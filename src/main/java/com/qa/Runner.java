@@ -1,7 +1,5 @@
 package com.qa;
 
-
-
 import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
@@ -18,9 +16,9 @@ public class Runner {
 	
 		while(true) {
 			Input input = new Input();
-			System.out.println("Database username: ");
+			LOGGER.info("Database username: ");
 			String user = input.getInput();
-			System.out.println("Database password: ");
+			LOGGER.info("Database password: ");
 			String password = input.getInput();
 			
 			RemoteJDBC connection;

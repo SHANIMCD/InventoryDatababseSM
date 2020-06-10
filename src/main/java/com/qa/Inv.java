@@ -63,8 +63,8 @@ public class Inv {
 			break;
 			
 		case INSERT:
-			System.out.println("Entering insert menu: ");
-			System.out.println("Please select one of the following: ");
+			LOGGER.info("Entering insert menu: ");
+			LOGGER.info("Please select one of the following: ");
 
 			for (ChooseTable chooseTable : ChooseTable.values()) {
 				System.out.println(chooseTable.name());
@@ -92,9 +92,7 @@ public class Inv {
 				break;
 
 			case ITEM:
-				System.out.println("--------------------");
 
-				System.out.println("Item create: ");
 				Input input = new Input();
 
 				System.out.println("Please enter the name of your item: ");
@@ -111,27 +109,25 @@ public class Inv {
 				itemDao.insertAnItem(item);
 				LOGGER.info(item_name + " successfully added!");
 
-				System.out.println("------");
-
 				break;
 
 			case CUSTOMER:
 
 				Input input1 = new Input();
 
-				System.out.println("customer first name:");
+				LOGGER.info("customer first name:");
 				String first_name = input1.getInput();
 
-				System.out.println("customer last name:");
+				LOGGER.info("customer last name:");
 				String last_name = input1.getInput();
 
-				System.out.println("customer address:");
+				LOGGER.info("customer address:");
 				String address = input1.getInput();
 
-				System.out.println("customer email:");
+				LOGGER.info("customer email:");
 				String email = input1.getInput();
 
-				System.out.println("customer password:");
+				LOGGER.info("customer password:");
 				String sausage = input1.getInput();
 
 				Customer customer = new Customer(1, first_name, last_name, address, email, sausage);
@@ -144,12 +140,12 @@ public class Inv {
 
 			case ORDERLINE:
 				Input input3 = new Input();
-				System.out.println("Orderline create: ");
-				System.out.println("Enter order ID: ");
+				LOGGER.info("Orderline create: ");
+				LOGGER.info("Enter order ID: ");
 				int order_id_fk = input3.getIntInput();
-				System.out.println("Enter Item ID: ");
+				LOGGER.info("Enter Item ID: ");
 				int _item_id_fk = input3.getIntInput();
-				System.out.println("Enter Item quantity: ");
+				LOGGER.info("Enter Item quantity: ");
 				int QTY = input3.getIntInput();
 
 				Orderline orderline = new Orderline(0, order_id_fk, _item_id_fk, QTY);
@@ -162,10 +158,10 @@ public class Inv {
 
 			case ORDER:
 				Input input2 = new Input();
-				System.out.println("Order create: ");
+				LOGGER.info("Order create: ");
 				System.out.println("Enter Customer ID: ");
 				int cust_id_fk = input2.getIntInput();
-				System.out.println("Enter Item ID: ");
+				LOGGER.info("Enter Item ID: ");
 				int item_id_fk = input2.getIntInput();
 
 				Order order = new Order(1, cust_id_fk, item_id_fk, null);
@@ -184,8 +180,8 @@ public class Inv {
 			break;
 
 		case READ:
-			System.out.println("Entering READ menu: ");
-			System.out.println("Please select one of the following: ");
+			LOGGER.info("READ menu: ");
+			LOGGER.info("Please type one of the following: ");
 
 			for (ChooseTable chooseTableRead : ChooseTable.values()) {
 				System.out.println(chooseTableRead.name());
@@ -244,8 +240,8 @@ public class Inv {
 			break;
 
 		case UPDATE:
-			System.out.println("UPDATE menu: ");
-			System.out.println("Please select one of the following: ");
+			LOGGER.info("UPDATE Menu: ");
+			LOGGER.info("Please type one of the following: ");
 
 			for (ChooseTable chooseTableUpdate : ChooseTable.values()) {
 				System.out.println(chooseTableUpdate.name());
@@ -274,21 +270,19 @@ public class Inv {
 				break;
 
 			case ITEM:
-				System.out.println("Entering Item update: ");
+				LOGGER.info("ITEM UPDATE: ");
 				Input input = new Input();
 
-				System.out.println("*********************");
-
-				System.out.println("Please enter/update the item name: ");
+				LOGGER.info("Please enter/update the item name: ");
 				String item_name = input.getInput();
 
-				System.out.println("Please enter/update the price: ");
+				LOGGER.info("Please enter/update the price: ");
 				double price = input.getNumInput();
 
-				System.out.println("Please enter/update the category: ");
+				LOGGER.info("Please enter/update the category: ");
 				String category = input.getInput();
 
-				System.out.println("Please enter the record ID which you'd like to update");
+				LOGGER.info("Please enter the record ID which you'd like to update");
 				int item_id = input.getIntInput();
 
 				Item item = new Item(item_id, item_name, price, category);
@@ -300,27 +294,26 @@ public class Inv {
 				break;
 
 			case CUSTOMER:
-				System.out.println("Entering Customer update: ");
+				LOGGER.info("Customer update Menu: ");
 				Input input1 = new Input();
 
-				System.out.println("*********************");
-				System.out.println("Please enter/update the following: ");
-				System.out.println("Customer first name: ");
+				LOGGER.info("Please enter/update the following: ");
+				LOGGER.info("Customer first name: ");
 				String first_name = input1.getInput();
 
-				System.out.println("customer last name:");
+				LOGGER.info("customer last name:");
 				String last_name = input1.getInput();
 
-				System.out.println("customer address:");
+				LOGGER.info("customer address:");
 				String address = input1.getInput();
 
-				System.out.println("customer email:");
+				LOGGER.info("customer email:");
 				String email = input1.getInput();
 
-				System.out.println("customer password:");
+				LOGGER.info("customer password:");
 				String _password = input1.getInput();
 
-				System.out.println("Please enter the record ID which you'd like to update: ");
+				LOGGER.info("Please enter the record ID which you'd like to update: ");
 				int customer_id = input1.getIntInput();
 
 				Customer customer = new Customer(customer_id, first_name, last_name, address, email, _password);
@@ -332,17 +325,16 @@ public class Inv {
 				break;
 
 			case ORDERLINE:
-				System.out.println("Entering Orderline update: ");
+				LOGGER.info("Orderline update: ");
 				Input input3 = new Input();
-				System.out.println("*********************");
-				System.out.println("Please enter/update the following: ");
-				System.out.println("Order ID: ");
+				LOGGER.info("Please enter/update the following: ");
+				LOGGER.info("Order ID: ");
 				int order_id_fk = input3.getIntInput();
-				System.out.println("Item ID: ");
+				LOGGER.info("Item ID: ");
 				int _item_id_fk = input3.getIntInput();
-				System.out.println("Enter quantity:");
+				LOGGER.info("Enter quantity:");
 				int QTY = input3.getIntInput();
-				System.out.println("Please enter the record ID which you'd like to update: ");
+				LOGGER.info("Please enter the record ID which you'd like to update: ");
 				int ol_id = input3.getIntInput();
 
 				Orderline orderline = new Orderline(ol_id, order_id_fk, _item_id_fk, QTY);
@@ -354,18 +346,17 @@ public class Inv {
 				break;
 
 			case ORDER:
-				System.out.println("Entering Order update: ");
+				LOGGER.info("Order update: ");
 				Input input2 = new Input();
 
-				System.out.println("*********************");
-				System.out.println("Please enter/update the following: ");
+				LOGGER.info("Please enter/update the following: ");
 
-				System.out.println("Customer ID: ");
+				LOGGER.info("Customer ID: ");
 				int cust_id_fk = input2.getIntInput();
-				System.out.println("Enter Item ID: ");
+				LOGGER.info("Enter Item ID: ");
 				int item_id_fk = input2.getIntInput();
 
-				System.out.println("Please enter the record ID which you'd like to update: ");
+				LOGGER.info("Please enter the record ID which you'd like to update: ");
 				int order_id = input2.getIntInput();
 
 				Order order = new Order(order_id, cust_id_fk, item_id_fk, null);
@@ -382,8 +373,8 @@ public class Inv {
 
 			break;
 		case DELETE:
-			System.out.println("Entering delete menu");
-			System.out.println("Please select one of the following: ");
+			LOGGER.info("Delete menu");
+			LOGGER.info("Please select one of the following: ");
 
 			for (ChooseTable chooseTableDelete : ChooseTable.values()) {
 				System.out.println(chooseTableDelete.name());
@@ -413,7 +404,7 @@ public class Inv {
 
 			case ITEM:
 				Input input5 = new Input();
-				System.out.println("Please enter the id of the item you'd like to delete: ");
+				LOGGER.info("Please enter the id of the item you'd like to delete: ");
 				int item_id = input5.getIntInput();
 				Item item = new Item(item_id, null, item_id, null);
 				ItemAccessObject itemDao = new ItemAccessObject(connection);
@@ -424,7 +415,7 @@ public class Inv {
 
 			case CUSTOMER:
 				Input input4 = new Input();
-				System.out.println("Please enter the ID number of the customer you'd like to delete: ");
+				LOGGER.info("Please enter the ID number of the customer you'd like to delete: ");
 				int customer_id = input4.getIntInput();
 				Customer cust = new Customer(customer_id, null, null, null, null, null);
 				CustomerDataAccessObject customerDao = new CustomerDataAccessObject(connection);
@@ -436,7 +427,7 @@ public class Inv {
 
 			case ORDER:
 				Input input3 = new Input();
-				System.out.println("Please enter the ID number of the order you'd like to delete: ");
+				LOGGER.info("Please enter the ID number of the order you'd like to delete: ");
 				int order_id = input3.getIntInput();
 
 				OrderDataAccessObject orderDao = new OrderDataAccessObject(connection);

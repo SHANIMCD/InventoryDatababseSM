@@ -57,7 +57,7 @@ public abstract class JDBC implements Openable, Closable, Queryable {
 	}
 	
 	public void sendUpdate(String sql) {
-		
+
 		try {
 			Statement statement = connection.createStatement();
 			statement.executeUpdate(sql);
@@ -67,6 +67,7 @@ public abstract class JDBC implements Openable, Closable, Queryable {
 			LOGGER.error(e.getMessage());
 			throw new SqlStatementNotUnderstoodException("could not execute: " + sql);
 		}
+
 		
 	}
 	

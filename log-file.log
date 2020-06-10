@@ -174,3 +174,78 @@
 2020-06-09 21:22:23 INFO  ItemService:25 - Orderline [ol_id=4, order_id_fk=1, item_id_fk=2, QTY=5]
 2020-06-09 21:22:23 INFO  ItemService:25 - Orderline [ol_id=5, order_id_fk=3, item_id_fk=3, QTY=4]
 2020-06-09 21:22:51 ERROR Runner:32 - unable to connect, please try again: 
+2020-06-09 21:45:05 ERROR Runner:32 - unable to connect, please try again: 
+2020-06-09 21:45:53 INFO  Inv:141 - Michael, has been added to the database 
+2020-06-09 21:46:22 INFO  CustomerService:24 - Customer [customer_id=1, first_name=Jenny, last_name=Lopez, address=the block, email=jlo@email.com, password=blahblah]
+2020-06-09 21:46:22 INFO  CustomerService:24 - Customer [customer_id=2, first_name=Shani, last_name=McDonald, address=10 Downing Street, email=shaniagain@email, password=passpasspass]
+2020-06-09 21:46:22 INFO  CustomerService:24 - Customer [customer_id=3, first_name=Katie, last_name=Johnson, address=Chelsea, email=katie@email, password=pass]
+2020-06-09 21:46:22 INFO  CustomerService:24 - Customer [customer_id=4, first_name=Mary, last_name=Mack, address=London, email=shani@email, password=pass]
+2020-06-09 21:46:22 INFO  CustomerService:24 - Customer [customer_id=5, first_name=Michael, last_name=Kyle, address=Stanford CT, email=mike@email, password=_pass]
+2020-06-09 21:47:11 INFO  Inv:61 - Exiting Application, Goodbye!
+2020-06-10 09:08:38 ERROR Runner:32 - unable to connect, please try again: 
+2020-06-10 09:08:59 INFO  Inv:176 -  Successfully added into orderline
+2020-06-10 09:09:44 INFO  Inv:61 - Exiting Application, Goodbye!
+2020-06-10 09:33:44 INFO  Runner:19 - Database username: 
+2020-06-10 09:33:47 INFO  Runner:21 - Database password: 
+2020-06-10 09:33:50 ERROR Runner:30 - unable to connect, please try again: 
+2020-06-10 09:33:50 INFO  Runner:19 - Database username: 
+2020-06-10 09:33:56 INFO  Runner:21 - Database password: 
+2020-06-10 09:34:26 INFO  Inv:376 - Delete menu
+2020-06-10 09:34:26 INFO  Inv:377 - Please select one of the following: 
+2020-06-10 09:34:34 INFO  Inv:183 - READ menu: 
+2020-06-10 09:34:34 INFO  Inv:184 - Please type one of the following: 
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=1, item_name=prawn crackers, price=0.99, category=appetizer]
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=2, item_name=hot and sour soup, price=3.99, category=appetizer]
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=3, item_name=salt and pepper spare ribs, price=5.99, category=appetizer]
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=5, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=6, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=7, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=9, item_name=fried chicken, price=8.0, category=chicken]
+2020-06-10 09:34:45 INFO  ItemService:27 - Item [item_id=10, item_name=chips, price=7.0, category=sides]
+2020-06-10 09:34:45 INFO  Runner:19 - Database username: 
+2020-06-10 09:35:17 INFO  Runner:21 - Database password: 
+2020-06-10 09:35:26 INFO  Inv:243 - UPDATE Menu: 
+2020-06-10 09:35:26 INFO  Inv:244 - Please type one of the following: 
+2020-06-10 09:35:32 INFO  Inv:273 - ITEM UPDATE: 
+2020-06-10 09:35:32 INFO  Inv:276 - Please enter/update the item name: 
+2020-06-10 09:35:44 INFO  Inv:279 - Please enter/update the price: 
+2020-06-10 09:35:49 INFO  Inv:282 - Please enter/update the category: 
+2020-06-10 09:35:53 INFO  Inv:285 - Please enter the record ID which you'd like to update
+2020-06-10 09:35:56 INFO  Inv:292 - cheesy chips now updated!
+2020-06-10 09:35:56 INFO  Runner:19 - Database username: 
+2020-06-10 09:36:02 INFO  Runner:21 - Database password: 
+2020-06-10 09:36:12 INFO  Inv:183 - READ menu: 
+2020-06-10 09:36:12 INFO  Inv:184 - Please type one of the following: 
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=1, item_name=prawn crackers, price=0.99, category=appetizer]
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=2, item_name=hot and sour soup, price=3.99, category=appetizer]
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=3, item_name=salt and pepper spare ribs, price=5.99, category=appetizer]
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=5, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=6, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=7, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=9, item_name=fried chicken, price=8.0, category=chicken]
+2020-06-10 09:36:13 INFO  ItemService:27 - Item [item_id=10, item_name=chips, price=7.0, category=sides]
+2020-06-10 09:36:13 INFO  Runner:19 - Database username: 
+2020-06-10 09:36:50 INFO  Runner:21 - Database password: 
+2020-06-10 09:37:01 INFO  Inv:243 - UPDATE Menu: 
+2020-06-10 09:37:01 INFO  Inv:244 - Please type one of the following: 
+2020-06-10 09:37:04 INFO  Inv:273 - ITEM UPDATE: 
+2020-06-10 09:37:04 INFO  Inv:276 - Please enter/update the item name: 
+2020-06-10 09:37:09 INFO  Inv:279 - Please enter/update the price: 
+2020-06-10 09:37:13 INFO  Inv:282 - Please enter/update the category: 
+2020-06-10 09:37:15 INFO  Inv:285 - Please enter the record ID which you'd like to update
+2020-06-10 09:37:18 INFO  Inv:292 - cheesy chips now updated!
+2020-06-10 09:37:18 INFO  Runner:19 - Database username: 
+2020-06-10 09:37:31 INFO  Runner:21 - Database password: 
+2020-06-10 09:37:41 INFO  Inv:183 - READ menu: 
+2020-06-10 09:37:41 INFO  Inv:184 - Please type one of the following: 
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=1, item_name=prawn crackers, price=0.99, category=appetizer]
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=2, item_name=hot and sour soup, price=3.99, category=appetizer]
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=3, item_name=salt and pepper spare ribs, price=5.99, category=appetizer]
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=5, item_name=cheesy chips, price=5.55, category=sides]
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=6, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=7, item_name=chicken, price=9.0, category=main ]
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=9, item_name=fried chicken, price=8.0, category=chicken]
+2020-06-10 09:37:43 INFO  ItemService:27 - Item [item_id=10, item_name=chips, price=7.0, category=sides]
+2020-06-10 09:37:43 INFO  Runner:19 - Database username: 
+2020-06-10 09:38:22 INFO  Runner:21 - Database password: 
+2020-06-10 09:38:27 INFO  Inv:61 - Exiting Application, Goodbye!

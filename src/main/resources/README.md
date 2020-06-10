@@ -1,24 +1,37 @@
-# QA Project 1 #
-## Inventory Management  - Shani McDonald ##
-
-### Inventory Management system
+## Project: Inventory Management system 
+### Shani McDonald
 
 #### Objective
     - Create an application using Java that interacts with a managed SQL database.
 
-Tools used:
+Prerequisites for running this application :
 - Java
-    - JDBC (Java Database Connectivity)
-- Maven
+  Maven
 - My SQL
-- Google Cloud Platform
-- Git/Git bash
-- JIRA
 
 
-# Set up:
+### Installation:
+- Git clone _________
+- cd into the demo foler 
+- run maven package
+- java -jar /target /name of jar file here
 
-## Cloud 
+how have I configured Maven?
+
+### Tests
+J-Unit
+- mvn test
+
+### Integration Tests
+Methods created during this application were reliant on other parts of the database for testing to pass which is why I focused mainly on integration testing as opposed to unit.
+
+
+### Sonarcube 
+
+
+
+
+### Cloud 
 I started by selecting a cloud computing service to be able to host my database online. 
 I picked Google Cloud platform. 
 I navigated to SQL in the GCP console menu and created an instance. 
