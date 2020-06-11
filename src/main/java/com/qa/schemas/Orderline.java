@@ -7,6 +7,12 @@ public class Orderline {
 	int item_id_fk;
 	int QTY;
 	
+	public Orderline(int order_id_fk, int item_id_fk) {
+		super();
+		this.order_id_fk = order_id_fk;
+		this.item_id_fk = item_id_fk;
+	}
+
 	public Orderline(int ol_id, int order_id_fk, int item_id_fk, int QTY) {
 		super();
 		this.ol_id = ol_id;

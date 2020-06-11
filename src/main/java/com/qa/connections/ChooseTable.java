@@ -5,6 +5,5 @@ public enum ChooseTable {
 	ITEM,
 	ORDER,
 	CUSTOMER,
-	ORDERLINE,
 	BACK;
 }

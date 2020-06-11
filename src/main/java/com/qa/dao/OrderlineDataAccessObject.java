@@ -29,8 +29,8 @@ public class OrderlineDataAccessObject {
 		jdbc.sendUpdate(sql);
 	}
 	
-	public List<Orderline> showTheOrderline() throws SQLException {
-		String sql = "select * from orderline;";
+	public List<Orderline> showTheOrderlineByOrderId(int orderId) throws SQLException {
+		String sql = "select * from orderline where order_id_fk = " +orderId;
 		ResultSet resultSet = jdbc.sendQuery(sql);
 		List<Orderline> orderlines = new ArrayList<Orderline>();
 		while (resultSet.next()) {
@@ -45,16 +45,6 @@ public class OrderlineDataAccessObject {
 		}
 		return orderlines;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public JDBC getJdbc() {
 		return jdbc;

@@ -1,5 +1,6 @@
 package com.qa.dao;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -17,10 +18,20 @@ public class OrderDataAccessObject {
 		this.setJdbc(jdbc);
 	}
 
-	public void insertAnOrder(Order order) {
-		String sql = "insert into orders (cust_id_fk, item_id_fk) values (" + order.getCust_id_fk() + ", " + order.getItem_id_fk() + ");";
+	public int insertAnOrder(Order order) throws SQLException {
+		String sql = "insert into orders (cust_id_fk, item_id_fk) values (?,?);";
+		PreparedStatement preparedStatement= jdbc.getPreparedStatement(sql);
+		preparedStatement.setInt(1, order.getCust_id_fk());
+		preparedStatement.setInt(2, 1);
+		preparedStatement.executeUpdate();
 		
-		jdbc.sendUpdate(sql);
+		ResultSet resultSet = preparedStatement.getGeneratedKeys();
+		resultSet.next();
+		int id = resultSet.getInt(1);
+		resultSet.close();
+		preparedStatement.close();
+		return id;
+		
 	}
 	
 	
@@ -30,7 +41,7 @@ public class OrderDataAccessObject {
 	}
 	
 	public void updateAnOrder(Order order) {
-		String sql = " UPDATE orders SET cust_id_fk = " + order.getCust_id_fk() + ", item_id_fk = " + order.getItem_id_fk() + " WHERE order_id = " + order.getOrder_id() + ";"; 
+		String sql = " UPDATE orders SET cust_id_fk = " + order.getCust_id_fk() + ", item_id_fk = " + " WHERE order_id = " + order.getOrder_id() + ";"; 
 		jdbc.sendUpdate(sql);
 	}
 	
@@ -42,10 +53,9 @@ public class OrderDataAccessObject {
 			
 			int order_id = resultSet.getInt("order_id");
 			int cust_id_fk = resultSet.getInt("cust_id_fk");
-			int item_id_fk = resultSet.getInt("item_id_fk");
 			Timestamp default_timestamp = resultSet.getTimestamp("datetime_placed");
 			
-			Order order = new Order(order_id, cust_id_fk, item_id_fk, default_timestamp);
+			Order order = new Order(order_id, cust_id_fk, default_timestamp);
 			orders.add(order);
 			
 		}

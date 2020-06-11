@@ -1,6 +1,7 @@
 package com.qa.connections;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -43,6 +44,9 @@ public abstract class JDBC implements Openable, Closable, Queryable {
 		}
 	}
 
+	public PreparedStatement getPreparedStatement(String sql) throws SQLException {
+		return connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+	}
 
 	public ResultSet sendQuery(String sql) {
 	
